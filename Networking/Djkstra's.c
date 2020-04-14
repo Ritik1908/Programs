@@ -4,7 +4,7 @@ int getMinimumVertexIndex(int visited[], int distance[], int noOfVertex) {
 	int min = 99999;
 	int index = -1;
 	for(int i = 0; i < noOfVertex; i++) {
-		if(visited[i] && distance[i] < min) {
+		if(visited[i]==0 && distance[i] <= min) {
 			min = distance[i];
 			index = i;
 		}
@@ -69,8 +69,8 @@ void main() {
 	// Find shortest path for all vertices 
     	for (int i = 0; i < noOfVertex-1; i++) {
     		
-    		int index =  getMinimumVertexIndex(visited, weightOfVertex, noOfVertex);
-    		visited[index] = 1;
+    		int u =  getMinimumVertexIndex(visited, weightOfVertex, noOfVertex);
+    		visited[u] = 1;
     		
         	for (int j = 0; j < noOfVertex; j++)
         	{ 
@@ -78,9 +78,9 @@ void main() {
 		    	// Update dist[v] only if is not in sptSet, there is an edge from 
 		    	// u to v, and total weight of path from src to  v through u is 
 		    	// smaller than current value of dist[v] 
-		    	if (!visited[j] && weightBetweenEdges[i][j] && weightOfVertex[i] != 99999 && (weightOfVertex[i] + weightBetweenEdges[i][j] < weightOfVertex[j]))
+		    	if (!visited[j] && weightBetweenEdges[u][j] && weightOfVertex[u] != 99999 && (weightOfVertex[u] + weightBetweenEdges[u][j] < weightOfVertex[j]))
 		    	{
-			        	weightOfVertex[j] = weightOfVertex[i] + weightBetweenEdges[i][j];
+			        	weightOfVertex[j] = weightOfVertex[u] + weightBetweenEdges[u][j];
 			}
 		}
     	} 
