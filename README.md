@@ -1,3 +1,8 @@
-# hello-world
-learning new codes 
-I am trying to learn programming waiting for helps
+# Programs
+
+In this repository i will try to add all codes i encounter in my course curriculam. Following are the codes added in sub repositories:
+
+## Networking:
+
+## Shell Scripting:
+
