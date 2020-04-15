@@ -35,6 +35,7 @@ void main() {
 	}
 	
 	// Weight of edges between vertices
+	printf("Take starting vertex as 0.\n");
 	printf("Enter each edge value in format: source destination weight\n");
 	for(int i = 0; i < noOfEdges; i++) {
 		scanf("%d %d %d", &source, &destination, &weight);
@@ -87,6 +88,6 @@ void main() {
 	
 	printf("Weight Of Vertex:\n");
 	for(int i = 0; i < noOfVertex; i++) {
-		printf("%d\t%d\n", (i+1), weightOfVertex[i]);
+		printf("%d\t%d\n", i, weightOfVertex[i]);
 	}
 }

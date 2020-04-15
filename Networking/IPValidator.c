@@ -60,6 +60,6 @@ int main()
 	char ip[15];
  	printf("Enter IP address: ");
  	scanf("%s",ip);
- 	is_valid_ip(ip)? printf("Valid.\n"): printf("Not Valid.\n");
+ 	is_valid_ip(ip)? printf("Valid IP.\n"): printf("Not Valid IP.\n");
  	return 0;
 }
