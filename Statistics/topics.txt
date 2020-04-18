@@ -1,0 +1,12 @@
+Differentiation
+Integration
+Exponential
+Trignometry Function
+Matrices
+Differential Equation
+Log
+Series
+Roots
+Quadratic
+Polynomial
+
