@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arithmetic Operations</title>
+</head>
+<body>
+	<div>
+		<label for="value_1">Enter 1st Number: </label>
+		<input type="number" name="value_1" placeholder="Enter 1st Value" id="value_1">
+	</div>
+	<div>
+		<label for="value_2">Enter 2nd Number:</label>
+		<input type="number" name="value_2" placeholder="Enter 2nd Value" id="value_2">
+	</div>
+	<div>
+		<button onclick="perform_operations();">Perform Operations</button>
+	</div>
+
+	<div id = "output"></div>
+
+	<script type="text/javascript">
+		function perform_operations() {
+			var num1 = parseFloat(document.getElementById("value_1").value);
+			var num2 = parseFloat(document.getElementById("value_2").value);
+
+			var sum = "Addition = "+(num1 + num2);
+			var sub = "Subtraction ="+(num1 - num2);
+			var mul = "Multiplication ="+(num1 * num2);
+			var div = "Division = "+(num1 / num2);
+			var mod = "Modulus = "+(num1 % num2);
+
+			var output = sum + "<br>" + sub  + "<br>" + mul + "<br>" + div + "<br>" + mod;
+			document.getElementById("output").innerHTML = output;
+		}
+	</script>
+</body>
+</html>

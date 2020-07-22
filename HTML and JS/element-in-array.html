@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime Number</title>
+</head>
+<body>
+	<div>
+		<label for="array">Enter comma seperated values of array.</label>
+		<input type="text" name="array" placeholder="1, 2, 3, 4, 5..." id="array">
+	</div>
+
+	<div>
+		<label for="key">Enter Element To Search In Array</label>
+		<input type="number" name="key" placeholder="10" id="key">
+	</div>
+	<div>
+		<button onclick="check_element();">Check</button>
+	</div>
+
+	<script type="text/javascript">
+		function check_element() {
+			var arr = document.getElementById("array").value.split(",");
+			var key = parseFloat(document.getElementById("key").value);
+
+			found = false;
+			key_found = -1;
+			for(var i = 0; i < arr.length; i++) {
+				if(arr[i] == key) {
+					found = true;
+					key_found = i;
+					break;
+				}
+			}
+			if(found) {
+				var message = key + " found at position " + key_found + ".";
+				alert(message);
+			} else {
+				alert("Not Found");
+			}
+		}
+	</script>
+
+</body>
+</html>
