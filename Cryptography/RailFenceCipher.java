@@ -36,7 +36,6 @@ class RailFenceCipher {
 			}
 			k = k + changeIndexBy;
 		}
-		printArr(ans);
 
 		for(int i = 0; i < key; i++) {
 			for(int j = 0; j < input.length(); j++) {
@@ -79,8 +78,6 @@ class RailFenceCipher {
 				}
 			}
 		}
-
-		printArr(ans);
 
 		String decryptedText = "";
 		for(int i = 0; i < input.length(); i++) {
