@@ -14,8 +14,8 @@ import java.util.*;
 
 public class AffineCipher {
 	
-	private int a = 17;
-	private int b = 20;
+	private int a = 7;
+	private int b = 2;
 	
 	// function to update a, b from default values
 	void update(int newA, int newB) {

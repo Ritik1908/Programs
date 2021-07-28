@@ -1,51 +1,51 @@
 import java.util.*;
 
-class Vigenere {
+class Main {
     
-static String generateKey(String str, String key) { 
+static String getkFromText(String str, String k) { 
     int x = str.length(); 
   
     for (int i = 0; ; i++) { 
         if (x == i) { 
             i = 0;
         }
-        if (key.length() == str.length()) { 
+        if (k.length() == str.length()) { 
             break; 
         }
-        key+=(key.charAt(i)); 
+        k+=(k.charAt(i)); 
     } 
-    return key; 
+    return k; 
 } 
   
 // This function returns the encrypted text
-static String encrypt(String str, String key) { 
-    String cipher_text=""; 
+static String encrypt(String plainText, String k) { 
+    String cipherText=""; 
   
-    for (int i = 0; i < str.length(); i++) { 
+    for (int i = 0; i < plainText.length(); i++) { 
         // converting in range 0-25 
-        int x = (str.charAt(i) + key.charAt(i)) %26; 
+        int x = (plainText.charAt(i) + k.charAt(i)) %26; 
   
         // convert into alphabets(ASCII) 
         x += 'A'; 
   
-        cipher_text+=(char)(x); 
+        cipherText+=(char)(x); 
     } 
-    return cipher_text; 
+    return cipherText; 
 } 
   
 // This function decrypts the encrypted text
-static String decrypt(String cipher_text, String key) { 
-    String orig_text=""; 
+static String decrypt(String cipherText, String k) { 
+    String plainText=""; 
   
-    for (int i = 0 ; i < cipher_text.length() &&  i < key.length(); i++) { 
+    for (int i = 0 ; i < cipherText.length() &&  i < k.length(); i++) { 
         // converting in range 0-25 
-        int x = (cipher_text.charAt(i) -  key.charAt(i) + 26) %26; 
+        int x = (cipherText.charAt(i) -  k.charAt(i) + 26) %26; 
   
         // convert into alphabets(ASCII) 
         x += 'A'; 
-        orig_text+=(char)(x); 
+        plainText+=(char)(x); 
     } 
-    return orig_text; 
+    return plainText; 
 } 
   
 // Driver code 
@@ -53,33 +53,33 @@ public static void main(String[] args) {
     
     Scanner sc = new Scanner (System.in);
 
-    String keyword = "ABCD";
-    String key = "";
+    String keyWord = "LEG";
+    String k = "";
 
     int choice;
-        String inputText;
+        String userInput;
 
         boolean run = true;
         do {
-            System.out.println("\nYou have to enter number to perform the action:\n1 to update key value (default is ABCD)\n2 to encrypt\n3 to decrypt\n4 to terminate");
+            System.out.println("\nEnter a number:\n1 to update Key value (default is LEG)\n2 to encrypt\n3 to decrypt\n4 to terminate");
             System.out.print("Enter Your Choice: ");
             choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case 1:
-                    System.out.print ("Enter New Key: ");
-                    keyword = sc.nextLine ();
+                    System.out.print ("Enter New k: ");
+                    keyWord = sc.nextLine ();
                     break;
                 case 2:
                     System.out.print("Enter text to encrypt: ");
-                    inputText = sc.nextLine();
-                    key = generateKey(inputText, keyword);
-                    System.out.println("Encrypted Text: " + encrypt(inputText, key));
+                    userInput = sc.nextLine();
+                    k = getkFromText(userInput, keyWord);
+                    System.out.println("Encrypted Text: " + encrypt(userInput, k));
                     break;
                 case 3:
                     System.out.print("Enter text to decrypt: ");
-                    inputText = sc.nextLine();
-                    key = generateKey(inputText, keyword);
-                    System.out.println("Decrypted Text: " + decrypt(inputText, key));
+                    userInput = sc.nextLine();
+                    k = getkFromText(userInput, keyWord);
+                    System.out.println("Decrypted Text: " + decrypt(userInput, k));
                     break;
                 case 4:
                     System.out.println("Terminating the program .....");
